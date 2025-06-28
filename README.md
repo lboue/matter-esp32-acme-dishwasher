@@ -22,6 +22,16 @@ This code has been built for the XIAO ESP32-C6. Currently, the pinouts are hardc
 | 20 | Rotary Encoder Clk |
 | 18 | Rotary Encoder DT |
 
+### Menuconfig
+
+Menuconfig to select pin number
+
+```shell
+idf.py menuconfig
+```
+![image](https://github.com/user-attachments/assets/a3b3429e-5b03-4c84-a01e-82418aeca058)
+
+
 ## Building
 
 To compile this application, you will need [esp-idf v5.4.1](https://github.com/espressif/esp-idf/releases/tag/v5.4.1) and [esp-matter v1.4](https://github.com/espressif/esp-matter/tree/release/v1.4). As I'm using a C6, I set the target accordingly. Once you have setup your esp-matter environment, you can compile it like this.
