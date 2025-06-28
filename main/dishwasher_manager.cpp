@@ -116,7 +116,7 @@ void DishwasherManager::StartProgram()
     UpdateDishwasherDisplay();
 
     ESP_LOGI(TAG, "Update OperationalState::Attributes::CurrentPhase");
-    esp_matter_attr_val_t phase = esp_matter_int(1);
+    esp_matter_attr_val_t phase = esp_matter_nullable_uint8(1);
     esp_matter::attribute::update(endpoint_id, cluster_id, OperationalState::Attributes::CurrentPhase::Id, &phase);
 }
 
