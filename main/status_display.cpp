@@ -23,7 +23,9 @@ static const char *TAG = "status_display";
 #define EXAMPLE_LCD_PIXEL_CLOCK_HZ (400 * 1000)
 #define EXAMPLE_PIN_NUM_SDA 22
 #define EXAMPLE_PIN_NUM_SCL 23
-#define EXAMPLE_PIN_NUM_RST 16
+// The (-1) parameter means that your OLED display doesn’t have a RESET pin.
+#define EXAMPLE_PIN_NUM_RST -1
+#define EXAMPLE_I2C_HW_ADDR 0x3C
 #define EXAMPLE_I2C_HW_ADDR 0x3C
 
 #define EXAMPLE_LCD_CMD_BITS 8
