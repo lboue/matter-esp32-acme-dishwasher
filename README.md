@@ -42,13 +42,15 @@ esptool.py --chip esp32c6 merge_bin -o xiao-esp32c6-dishwasher.bin @flash_args
 
 To commission the device, follow the instuctions here https://docs.espressif.com/projects/esp-matter/en/latest/esp32/developing.html#commissioning-and-control
 
-## Using
+## Remote control
+
+### chip-tool
 
 I use the `chip-tool` for most testing, since Dishwashers aren't supported in iOS or Android.
 
 Some example commands (based on a NodeId of 0x05) for turning it on, selecting a program and starting it.
 
-```
+```shell
 chip-tool onoff on 0x05 0x01
 chip-tool dishwashermode read supported-modes 0x05 0x01
 chip-tool dishwashermode change-to-mode 1 0x05 0x01
