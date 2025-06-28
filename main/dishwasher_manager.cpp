@@ -112,13 +112,19 @@ void DishwasherManager::StartProgram()
     mTimeRemaining = 30; // TODO Make this depend on the selected mode.
     uint16_t endpoint_id = 0x01;
     uint32_t cluster_id = OperationalState::Id;
+    uint32_t attribute_id = OperationalState::Attributes::CurrentPhase::Id;
+
     UpdateOperationState(OperationalStateEnum::kRunning);
     UpdateDishwasherDisplay();
 
+    esp_matter::attribute_t *attribute = esp_matter::attribute::get(endpoint_id, cluster_id, attribute_id);
+    esp_matter_attr_val_t val = esp_matter_invalid(NULL);
+    esp_matter::attribute::get_val(attribute, &val);
+    val.val.u8 = static_cast<uint8_t>(1);
     ESP_LOGI(TAG, "Update OperationalState::Attributes::CurrentPhase");
-    esp_matter_attr_val_t phase = esp_matter_nullable_uint8(1);
-    esp_matter::attribute::update(endpoint_id, cluster_id, OperationalState::Attributes::CurrentPhase::Id, &phase);
+    esp_matter::attribute::update(endpoint_id, cluster_id, attribute_id, &val);
 }
+
 
 void DishwasherManager::PauseProgram()
 {
