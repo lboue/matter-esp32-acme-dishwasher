@@ -27,7 +27,7 @@ This code has been built for the XIAO ESP32-C6. Currently, the pinouts are hardc
 To compile this application, you will need [esp-idf v5.4.1](https://github.com/espressif/esp-idf/releases/tag/v5.4.1) and [esp-matter v1.4](https://github.com/espressif/esp-matter/tree/release/v1.4). As I'm using a C6, I set the target accordingly. Once you have setup your esp-matter environment, you can compile it like this.
 
 ```shell
-idf.py set-target esp32-c6
+idf.py set-target esp32c6
 idf.py build flash monitor
 ```
 
