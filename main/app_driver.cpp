@@ -27,7 +27,7 @@ DataModel::Nullable<uint32_t> OperationalStateDelegate::GetCountdownTime()
     ESP_LOGI(TAG, "GetCountdownTime");
     uint32_t timeRemaining = DishwasherMgr().GetTimeRemaining();
 
-    if (timeRemaining <= 0)
+    if (timeRemaining < 0)
     {
         return DataModel::NullNullable; // Return null if the time remaining is zero or less);
     }
