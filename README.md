@@ -30,15 +30,15 @@ I'm really interested in the energy management aspect of the Matter protocol. Th
 
 This code has been built for the XIAO ESP32-C6. Currently, the pinouts are hardcoded, so if you want to use a different ESP Board, you'll need to change them in the code.
 
-| GPIO     | Usage   |
-| -------- | ------- |
-| 01 | On/Off Button (active high) |
-| 02 | Start/Pause/Resume Button (active high) |
-| 22 | Display I2C SDA |
-| 23 | Display I2C SCL |
-| 16 | Display I2C Reset |
-| 20 | Rotary Encoder Clk |
-| 18 | Rotary Encoder DT |
+| GPIO     | Usage   | Name    |
+| -------- | ------- | ------- |
+| 01 | On/Off Button (active high) |                   |
+| 02 | Start/Pause/Resume Button (active high) |                   |
+| 22 | Display I2C SDA | EXAMPLE_PIN_NUM_SDA |
+| 23 | Display I2C SCL | EXAMPLE_PIN_NUM_SCL |
+| 16 | Display I2C Reset |                   |
+| 20 | Rotary Encoder Clk |                   |
+| 18 | Rotary Encoder DT |                   |
 
 ## Building
 
